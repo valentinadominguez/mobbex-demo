@@ -8,6 +8,7 @@ import Boton from './Boton';
 
 
 function App () {
+
   
   var valorTotal = "$100";
 
@@ -17,9 +18,16 @@ function App () {
     console.log('number -->', number.lenght);
     console.log(cardNumber.lenght);
     console.log(cardNumber);
-      if (cardNumber.lenght >= 5 ){
+      if (cardNumber.length >= 5 ){
         alert("HOLA MUNDO");
       } 
+    }
+
+    function validateNumber (evt){
+      var cardNumber = document.getElementById("cardnumber").value;
+      if(/[^0-9]/g.test(cardNumber)){
+        document.getElementById("cardnumber").value.replace(/[^0-9]/g,"");
+      }
     }
 
   return (
@@ -32,7 +40,14 @@ function App () {
               </div>        
               <form>
                 <h2>BOLD SPECIALTY COFFEE S.A.S.</h2>
-                <input className="labels" name="cardnumber" id="cardnumber" type="text" placeholder="Número de tarjeta" onChange={ (event) =>showOptions(event)}/>
+                <div className="flex-container">
+                <div className="col-md-9"> 
+                <input className="labels" name="cardnumber" id="cardnumber" type="text" placeholder="Número de tarjeta" onChange={ (event) =>showOptions(event)} onChange={ (ev) =>validateNumber(ev)} />
+                </div> 
+                <div className="col-md-3">
+                <img src="visa.jpg" alt="Mobbexlogo" id="visaimg" />
+                </div> 
+                </div>
                 <input className="labels" name="name" id="name" type="text" placeholder="Nombre (Como aparece en la tarjeta)" />
                 <input className="labels" name="dni" id="dni" type="text" placeholder="Número de documento" />
           
@@ -42,7 +57,7 @@ function App () {
                     <small id="expirationHelp" className="form-text text-muted">Ej: 08/21 (MM/AA)</small>
                   </div>  
                   <div className="col-md-6">  
-                    <input className="labels" name="securitycode" id="securitycode" type="text" placeholder="Código de seguridad"/>
+                    <input className="labels" name="securitycode" id="securitycode" type="number" placeholder="Código de seguridad"/>
                     <small id="codeHelp" className="form-text text-muted">Código de 3 dígitos en la parte trasera</small>
                   </div>  
                 </div>
