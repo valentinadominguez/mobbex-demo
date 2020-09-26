@@ -6,12 +6,10 @@ export default class Hider extends React.Component {
     constructor() {
         super();
         
-        this.state = { hide: true };
-    }
+    this.state = { hide: true };
+     }
     
-    handleClick() {
-        this.setState({hide: false});
-    }
+    
 
     render() {
         var className = this.state.hide ? 'd-none' : '';

@@ -32,8 +32,6 @@ code {
   color: white;
   box-shadow: 7px 13px 37px gray;
   width: 50%;
-  
-  
 }
 
 .form h2 {
@@ -71,22 +69,35 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
- 
-  
+}
+
+.form h2{
+  text-align: center;
 }
 
 .form h3{
   text-align: right;
 }
 
-
 .radbuttons{
   font-size: 17px;
   color: rebeccapurple;
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
 
 #visaimg{
+  border-radius: 5%;
+  visibility: hidden;
+  position: absolute;
+}
+
+.cardsplace{
+  padding: 10px;
+  position: relative;
+  top: 5px;
+  height: 25px;
+}
+
+#cardplace{
   border-radius: 5%;
 }
